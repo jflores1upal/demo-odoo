@@ -1,0 +1,23 @@
+services:
+  demo-odoo:
+    container_name: demo-odoo
+    image: odoo:18
+    env_file: .env
+    # depends_on:
+    #   - demo-db # descomentar para entorno de desarrollo y pruebas
+    ports:
+      - "8369:8069"
+      - "8372:8072"
+    volumes:
+      - ./odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+  # Descomentar para entorno de desarrollo y pruebas
+  demo-db:
+    container_name: demo-db
+    image: postgres:18
+    ports:
+      - "5434:5432"
+    env_file: .env
+    volumes:
+      - ./odoo-db-data:/var/lib/postgresql/data/pgdata

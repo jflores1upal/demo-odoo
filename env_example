@@ -1,0 +1,8 @@
+HOST=demo-db
+PORT=5432
+USER=odoo
+PASSWORD=odoopass
+POSTGRES_USER=odoo
+POSTGRES_PASSWORD=odoopass
+POSTGRES_DB=postgres
+PGDATA=/var/lib/postgresql/data/pgdata
